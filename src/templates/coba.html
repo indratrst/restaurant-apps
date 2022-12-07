@@ -16,46 +16,97 @@
 		.container-detail {
 			/* width: 100%; */
 			/* height: 500px; */
-			background: rgb(128, 68, 68);
+			/* background: rgb(128, 68, 68); */
 			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(1, 0.5fr);
+			/* grid-template-columns: repeat(2, 1fr); */
+			grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+			text-align: left;
+			gap: 20px;
 		}
-		.detail-image img {
+		.image-detail img {
 			background-color: aqua;
 			height: 100%;
 			width: 100%;
+			object-fit: cover;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 		}
 		.text-detail {
-			background: rgb(117, 55, 55);
-			padding: 50px;
+			/* background: rgb(117, 55, 55); */
+			padding: 40px;
 			line-height: 27px;
 			text-align: left;
+			background: rgb(250 250 250);
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			font-size: 14px;
 		}
 		.menu-drinks,
 		.menu-foods {
-			background: rgb(161, 148, 148);
-			width: 100%;
 			padding: 50px;
+			width: 100%;
+			text-align: left;
+			background: rgb(250 250 250);
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		}
+		.menu-drinks ul li,
+		.menu-foods ul li {
+			/* width: 100%; */
+			text-align: left;
+			line-height: 29px;
+			margin-left: 24px;
+		}
+		.user-review {
+			margin: 50px 0px;
 		}
 		.reviews {
-			background: rgb(151, 127, 127);
 			width: 100%;
-			padding: 50px;
+			display: grid;
+			/* grid-template-columns: repeat(3, 1fr); */
+			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+			gap: 30px;
+			margin-top: 30px;
+		}
+		/* .container-card-review {
+	display: grid;
+	gap: 30px;
+} */
+
+		.card-review {
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			transition: 0.3s;
+			height: auto;
+			padding: 20px;
+			line-height: 24px;
+			text-align: left;
+		}
+
+		.card-review:hover {
+			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+		}
+		.wrap-review {
+			display: flex;
+			justify-content: space-between;
+			padding-bottom: 10px;
+		}
+		.wrapping-detail {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-column: 1 / span 2;
 		}
 	</style>
 	<body>
 		<div class="container-detail">
-			<div class="detail-image"><img src="../public/images/heros/hero-image_1.jpg" alt="" /></div>
-			<div class="text-detail">
-				<h3>Title :</h3>
-				<p>Lorem ipsum dolor sit.</p>
-				<h3>Address :</h3>
-				<p>Lorem ipsum dolor sit.</p>
-				<h3>City :</h3>
-				<p>Lorem ipsum dolor sit amet.</p>
-				<h3>Description :</h3>
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, repellat?</p>
+			<div class="wrapping-detail">
+				<div class="image-detail"><img src="../public/images/heros/hero-image_1.jpg" alt="" /></div>
+				<div class="text-detail">
+					<h3>Title :</h3>
+					<p>Lorem ipsum dolor sit.</p>
+					<h3>Address :</h3>
+					<p>Lorem ipsum dolor sit.</p>
+					<h3>City :</h3>
+					<p>Lorem ipsum dolor sit amet.</p>
+					<h3>Description :</h3>
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, repellat?</p>
+				</div>
 			</div>
 			<div class="menu-drinks">
 				<h2>Menu Drinks</h2>
@@ -75,12 +126,48 @@
 			</div>
 		</div>
 		<div class="reviews">
-			<h3>Name :</h3>
-			<p>Lorem ipsum dolor sit.</p>
-			<h3>Review :</h3>
-			<p>Lorem ipsum dolor sit.</p>
-			<h3>Date :</h3>
-			<p>Lorem ipsum dolor sit.</p>
+			<div class="container-card-review">
+				<div class="card-review">
+					<div class="wrap-review">
+						<h3>
+							<b>John Doe</b>
+						</h3>
+						<h4>Date: 12-02-2022</h4>
+					</div>
+					<p>
+						<strong> Review :</strong> <br />
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vero in consequuntur tempora minus reiciendis labore tempore quisquam velit harum.
+					</p>
+				</div>
+			</div>
+			<div class="container-card-review">
+				<div class="card-review">
+					<div class="wrap-review">
+						<h3>
+							<b>John Doe</b>
+						</h3>
+						<h4>Date: 12-02-2022</h4>
+					</div>
+					<p>
+						<strong> Review :</strong> <br />
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vero in consequuntur tempora minus reiciendis labore tempore quisquam velit harum.
+					</p>
+				</div>
+			</div>
+			<div class="container-card-review">
+				<div class="card-review">
+					<div class="wrap-review">
+						<h3>
+							<b>John Doe</b>
+						</h3>
+						<h4>Date: 12-02-2022</h4>
+					</div>
+					<p>
+						<strong> Review :</strong> <br />
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vero in consequuntur tempora minus reiciendis labore tempore quisquam velit harum.
+					</p>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
