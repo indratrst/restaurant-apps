@@ -2,7 +2,7 @@
 	"id": "restaurant-list-lite-pwa-1",
 	"start_url": "./index.html",
 	"name": "Restaurant List Lite",
-	"short_name": "Restaurant App",
+	"short_name": "Restaurant List",
 	"description": "Recomendation destination for you",
 	"display": "standalone",
 	"background_color": "#FFFFFF",

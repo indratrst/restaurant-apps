@@ -1,6 +1,6 @@
-import CONFIG from "../../globals/config";
+import CONFIG from '../../globals/config';
 
-const createRestaurantItemTemplate = (restaurant) => /*html*/ `
+const createRestaurantItemTemplate = (restaurant) =>/* html */ `
 <article class="card-items">
 <img class="card-items-header" src="${CONFIG.BASE_IMAGE_URL_S + restaurant.pictureId}" alt="${restaurant.title}" />
  <div class="card-items-content">
@@ -12,13 +12,13 @@ const createRestaurantItemTemplate = (restaurant) => /*html*/ `
    ${restaurant.description}
    </p>
    <a href="#/detail/${restaurant.id}">
-   <button class="card-items-button">Read More</button>
+   <button class="card-items-button">Detail</button>
    </a>
+
  </div>
  </article>
 `;
-
-const createRestaurantDetailTemplate = (restaurant) => /*html*/ `
+const createRestaurantDetailTemplate = (restaurant) => /* html */ `
 <div class="container-detail">
 				<div class="wrapping-detail">
 					<div class="image-detail"><img src="${CONFIG.BASE_IMAGE_URL_L + restaurant.pictureId}" alt="${restaurant.title}" /></div>
@@ -38,13 +38,13 @@ const createRestaurantDetailTemplate = (restaurant) => /*html*/ `
 								<div class="menu-drinks">
 										<h2>Menu Drinks</h2>
 										<ul>
-									${restaurant.menus.drinks.map((drink) => /*html*/ `<li>${drink.name}</li>`).join("")}
+									${restaurant.menus.drinks.map((drink) => /* html */ `<li>${drink.name}</li>`).join('')}
 										</ul>		
 								</div>
 								<div class="menu-foods">
 										<h2>Menu Foods</h2>
 										<ul>
-									${restaurant.menus.foods.map((food) => /*html*/ `<li>${food.name}</li>`).join("")}	
+									${restaurant.menus.foods.map((food) => /* html */ `<li>${food.name}</li>`).join('')}	
 										</ul>
 								</div>
 </div>
@@ -52,8 +52,8 @@ const createRestaurantDetailTemplate = (restaurant) => /*html*/ `
 				<h2>Review</h2>
 				<div class="reviews">
 				${restaurant.customerReviews
-					.map(
-						(data) => /*html*/ `
+    .map(
+      (data) => /* html */ `
 					<div class="container-card-review">
 						<div class="card-review">
 							<div class="wrap-review">
@@ -68,23 +68,25 @@ const createRestaurantDetailTemplate = (restaurant) => /*html*/ `
 							</p>
 						</div>
 					</div>
-				`
-					)
-					.join("")}	
+				`,
+    )
+    .join('')}	
 					</section>
 								</div>
 						`;
 
-const createLikeButtonTemplate = () => /*html*/ `
+const createLikeButtonTemplate = () => /* html */ `
 						<button aria-label="like this list restaurant" id="likeButton" class="like">
-							<i class="fa fa-heart-o" aria-hidden="true"></i>
+							<i class="fa-regular fa-thumbs-up" aria-hidden="true"></i>
 						</button>
 					`;
 
-const createLikedButtonTemplate = () => /*html*/ `
+const createLikedButtonTemplate = () => /* html */ `
 						<button aria-label="unlike this restaurant" id="likeButton" class="like">
-							<i class="fa fa-heart" aria-hidden="true"></i>
+							<i class="fa-solid fa-thumbs-up" aria-hidden="true"></i>
 						</button>
 					`;
 
-export { createRestaurantItemTemplate, createRestaurantDetailTemplate, createLikeButtonTemplate, createLikedButtonTemplate };
+export {
+  createRestaurantItemTemplate, createRestaurantDetailTemplate, createLikeButtonTemplate, createLikedButtonTemplate,
+};

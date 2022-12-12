@@ -1,39 +1,78 @@
-import UrlParser from "../../routes/url-parser";
-import restaurantDataSource from "../../data/restaurantdata-source";
-import { createRestaurantDetailTemplate } from "../templates/template-creator";
-import LikeButtonInitiator from "../../utils/like-button-initiator";
+import UrlParser from '../../routes/url-parser';
+import restaurantDataSource from '../../data/restaurantdata-source';
+import { createRestaurantDetailTemplate } from '../templates/template-creator';
+import LikeButtonInitiator from '../../utils/like-button-initiator';
+import PostReview from '../../utils/reviewer-post';
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
+import loader from '../templates/loader';
 
 const Detail = {
-	async render() {
-		return `
+  async render() {
+    return /*html*/`
 		<div class="breaker">
 		<h2 class="text">Picturesque Shutter <br />Resto Detail</h2>
-	</div>
-    <div class="container-upper">
+    <div id="loading">
+		
 		</div>
+		</div>
+		<div class="container-card-detail">
+    
+		</div>
+    
 		<div id="likeButtonContainer"></div>
-    `;
-	},
+    <div class="container-review">
+		<form class="form-review">
+			<h2>Input Your Review</h2>
+		<label for="inputName">Nama</label>
+		<input type="text" name="inputName" id="inputName" />
+		<label for="inputReview">Review</label>
+			<input type="text-area" name="inputReview" id="inputReview" /> 
+		<a href="#/review">
+		<button id="submit-review" class="card-items-button">Submit</button>
+		</a>
+		</form>
+    </div>
+		`;
+  },
 
-	async afterRender() {
-		const url = UrlParser.parseActiveUrlWithoutCombiner();
-		const restaurant = await restaurantDataSource.detailRestaurant(url.id);
-		const restaurantContainer = document.querySelector(".container-upper");
-		restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
+  async afterRender() {
+    const url = UrlParser.parseActiveUrlWithoutCombiner();
+    const restaurantContainer = document.querySelector('.container-card-detail');
+    const animateLoader = document.getElementById('loading');
 
-		LikeButtonInitiator.init({
-			likeButtonContainer: document.querySelector("#likeButtonContainer"),
-			restaurant: {
-				id: restaurant.id,
-				pictureId: restaurant.pictureId,
-				name: restaurant.name,
-				rating: restaurant.rating,
-				description: restaurant.description,
-				address: restaurant.address,
-				city: restaurant.city,
-			},
-		});
-	},
+    animateLoader.innerHTML = loader.loaderSucceed();
+ 
+    try {
+      const restaurant = await restaurantDataSource.detailRestaurant(url.id);
+      restaurantContainer.innerHTML += createRestaurantDetailTemplate(restaurant);
+      LikeButtonInitiator.init({
+        likeButtonContainer: document.querySelector('#likeButtonContainer'),
+        FavoriteRestaurant: FavoriteRestaurantIdb,
+        restaurant,
+      });
+
+      animateLoader.style.display = 'none';
+    } catch (error) {
+      animateLoader.innerHTML = loader.loaderFail();
+    }
+
+    const btnSubmit = document.querySelector('#submit-review');
+    const nameInput = document.querySelector('#inputName');
+    const reviewInput = document.querySelector('#inputReview');
+
+    btnSubmit.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (nameInput.value === '' && reviewInput.value === '') {
+        alert('Inputan tidak boleh ada yang kosong');
+        nameInput.value = '';
+        reviewInput.value = '';
+      } else {
+        PostReview(url, nameInput.value, reviewInput.value);
+        nameInput.value = '';
+        reviewInput.value = '';
+      }
+    });
+  },
 };
 
 export default Detail;

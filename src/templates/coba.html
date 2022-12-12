@@ -64,6 +64,8 @@
 			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 			gap: 30px;
 			margin-top: 30px;
+			height: 300px;
+			overflow: auto;
 		}
 		/* .container-card-review {
 	display: grid;
@@ -92,9 +94,27 @@
 			grid-template-columns: repeat(2, 1fr);
 			grid-column: 1 / span 2;
 		}
+		.form-review{
+			display: flex;
+			flex-direction: column;
+			height: 260px;
+			width:50%;
+			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+			padding: 20px;
+			position: relative;
+			
+		}
+		.form-review label:has(+ textarea) , .form-review label{
+			padding: 10px 0px;
+		}
+		.form-review button{
+			margin: 20px;
+			position: absolute;
+			right: 20px;
+		}
 	</style>
 	<body>
-		<div class="container-detail">
+		<!-- <div class="container-detail">
 			<div class="wrapping-detail">
 				<div class="image-detail"><img src="../public/images/heros/hero-image_1.jpg" alt="" /></div>
 				<div class="text-detail">
@@ -168,6 +188,214 @@
 					</p>
 				</div>
 			</div>
-		</div>
+			<div class="container-card-review">
+				<div class="card-review">
+					<div class="wrap-review">
+						<h3>
+							<b>John Doe</b>
+						</h3>
+						<h4>Date: 12-02-2022</h4>
+					</div>
+					<p>
+						<strong> Review :</strong> <br />
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vero in consequuntur tempora minus reiciendis labore tempore quisquam velit harum.
+					</p>
+				</div>
+			</div>
+			<div class="container-card-review">
+				<div class="card-review">
+					<div class="wrap-review">
+						<h3>
+							<b>John Doe</b>
+						</h3>
+						<h4>Date: 12-02-2022</h4>
+					</div>
+					<p>
+						<strong> Review :</strong> <br />
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vero in consequuntur tempora minus reiciendis labore tempore quisquam velit harum.
+					</p>
+				</div>
+			</div>
+			<div class="container-card-review">
+				<div class="card-review">
+					<div class="wrap-review">
+						<h3>
+							<b>John Doe</b>
+						</h3>
+						<h4>Date: 12-02-2022</h4>
+					</div>
+					<p>
+						<strong> Review :</strong> <br />
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vero in consequuntur tempora minus reiciendis labore tempore quisquam velit harum.
+					</p>
+				</div>
+			</div>
+			<div class="container-card-review">
+				<div class="card-review">
+					<div class="wrap-review">
+						<h3>
+							<b>John Doe</b>
+						</h3>
+						<h4>Date: 12-02-2022</h4>
+					</div>
+					<p>
+						<strong> Review :</strong> <br />
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vero in consequuntur tempora minus reiciendis labore tempore quisquam velit harum.
+					</p>
+				</div>
+			</div>
+			<div class="container-card-review">
+				<div class="card-review">
+					<div class="wrap-review">
+						<h3>
+							<b>John Doe</b>
+						</h3>
+						<h4>Date: 12-02-2022</h4>
+					</div>
+					<p>
+						<strong> Review :</strong> <br />
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vero in consequuntur tempora minus reiciendis labore tempore quisquam velit harum.
+					</p>
+				</div>
+			</div>
+			<div class="container-card-review">
+				<div class="card-review">
+					<div class="wrap-review">
+						<h3>
+							<b>John Doe</b>
+						</h3>
+						<h4>Date: 12-02-2022</h4>
+					</div>
+					<p>
+						<strong> Review :</strong> <br />
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vero in consequuntur tempora minus reiciendis labore tempore quisquam velit harum.
+					</p>
+				</div>
+			</div>
+			<div class="container-card-review">
+				<div class="card-review">
+					<div class="wrap-review">
+						<h3>
+							<b>John Doe</b>
+						</h3>
+						<h4>Date: 12-02-2022</h4>
+					</div>
+					<p>
+						<strong> Review :</strong> <br />
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vero in consequuntur tempora minus reiciendis labore tempore quisquam velit harum.
+					</p>
+				</div>
+			</div>
+			<div class="container-card-review">
+				<div class="card-review">
+					<div class="wrap-review">
+						<h3>
+							<b>John Doe</b>
+						</h3>
+						<h4>Date: 12-02-2022</h4>
+					</div>
+					<p>
+						<strong> Review :</strong> <br />
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vero in consequuntur tempora minus reiciendis labore tempore quisquam velit harum.
+					</p>
+				</div>
+			</div>
+			<div class="container-card-review">
+				<div class="card-review">
+					<div class="wrap-review">
+						<h3>
+							<b>John Doe</b>
+						</h3>
+						<h4>Date: 12-02-2022</h4>
+					</div>
+					<p>
+						<strong> Review :</strong> <br />
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vero in consequuntur tempora minus reiciendis labore tempore quisquam velit harum.
+					</p>
+				</div>
+			</div>
+			<div class="container-card-review">
+				<div class="card-review">
+					<div class="wrap-review">
+						<h3>
+							<b>John Doe</b>
+						</h3>
+						<h4>Date: 12-02-2022</h4>
+					</div>
+					<p>
+						<strong> Review :</strong> <br />
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vero in consequuntur tempora minus reiciendis labore tempore quisquam velit harum.
+					</p>
+				</div>
+			</div>
+			<div class="container-card-review">
+				<div class="card-review">
+					<div class="wrap-review">
+						<h3>
+							<b>John Doe</b>
+						</h3>
+						<h4>Date: 12-02-2022</h4>
+					</div>
+					<p>
+						<strong> Review :</strong> <br />
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vero in consequuntur tempora minus reiciendis labore tempore quisquam velit harum.
+					</p>
+				</div>
+			</div>
+			<div class="container-card-review">
+				<div class="card-review">
+					<div class="wrap-review">
+						<h3>
+							<b>John Doe</b>
+						</h3>
+						<h4>Date: 12-02-2022</h4>
+					</div>
+					<p>
+						<strong> Review :</strong> <br />
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vero in consequuntur tempora minus reiciendis labore tempore quisquam velit harum.
+					</p>
+				</div>
+			</div>
+			<div class="container-card-review">
+				<div class="card-review">
+					<div class="wrap-review">
+						<h3>
+							<b>John Doe</b>
+						</h3>
+						<h4>Date: 12-02-2022</h4>
+					</div>
+					<p>
+						<strong> Review :</strong> <br />
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vero in consequuntur tempora minus reiciendis labore tempore quisquam velit harum.
+					</p>
+				</div>
+			</div>
+			<div class="container-card-review">
+				<div class="card-review">
+					<div class="wrap-review">
+						<h3>
+							<b>John Doe</b>
+						</h3>
+						<h4>Date: 12-02-2022</h4>
+					</div>
+					<p>
+						<strong> Review :</strong> <br />
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vero in consequuntur tempora minus reiciendis labore tempore quisquam velit harum.
+					</p>
+				</div>
+			</div>
+		</div> -->
+
+		<form class="form-review">
+			<h2>Input Your Review</h2>
+			<label for="inputName">Nama</label>
+			<input type="text" name="inputName" id="inputName" />
+			<label for="inputReview">Review</label>
+			<!-- <input type="text-area" name="inputReview" id="inputReview" /> -->
+			<textarea id="" name="inputReview" rows="4" cols="50">At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.</textarea>
+			<a href="#/review">
+			<button id="submit-review">Submit</button>
+			</a>
+			</form>
 	</body>
 </html>

@@ -1,24 +1,39 @@
-import restaurantDataSource from "../../data/restaurantdata-source";
-import { createRestaurantItemTemplate } from "../templates/template-creator";
+import restaurantDataSource from '../../data/restaurantdata-source';
+import { createRestaurantItemTemplate } from '../templates/template-creator';
+import loader from '../templates/loader';
 
 const HomePage = {
-	async render() {
-		return `
+  async render() {
+    return `
+		<div id="loading">
+
+		</div>
 		<div class="breaker">
+		
 		<h2 class="text">Picturesque Shutter <br />Resto List</h2>
 	</div>
     <div class="card" id="mainContent">
   	</div>
     `;
-	},
+  },
 
-	async afterRender() {
-		const restaurant = await restaurantDataSource.homePage();
-		const restaurantContainer = document.querySelector("#mainContent");
-		restaurant.forEach((resto) => {
-			restaurantContainer.innerHTML += createRestaurantItemTemplate(resto);
-		});
-	},
+  async afterRender() {
+    const ElementLoader = document.getElementById('loading');
+    ElementLoader.innerHTML = loader.loaderSucceed();
+
+    const restaurantContainer = document.querySelector('#mainContent');
+
+    try {
+      const restaurant = await restaurantDataSource.homePage();
+
+      restaurant.forEach((resto) => {
+        restaurantContainer.innerHTML += createRestaurantItemTemplate(resto);
+      });
+      ElementLoader.style.display = 'none';
+    } catch (err) {
+      ElementLoader.innerHTML = loader.loaderFail();
+    }
+  },
 };
 
 export default HomePage;
