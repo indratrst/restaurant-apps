@@ -1,5 +1,5 @@
 import restaurantDataSource from '../../data/restaurantdata-source';
-import { createRestaurantItemTemplate } from '../templates/template-creator';
+import { listRestaurant } from '../templates/template-creator';
 import loader from '../templates/loader';
 
 const HomePage = {
@@ -27,7 +27,7 @@ const HomePage = {
       const restaurant = await restaurantDataSource.homePage();
 
       restaurant.forEach((resto) => {
-        restaurantContainer.innerHTML += createRestaurantItemTemplate(resto);
+        restaurantContainer.innerHTML += listRestaurant(resto);
       });
       ElementLoader.style.display = 'none';
     } catch (err) {

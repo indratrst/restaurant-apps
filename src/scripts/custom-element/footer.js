@@ -1,4 +1,4 @@
-class CostumeFooter extends HTMLElement {
+class CustomFooter extends HTMLElement {
   constructor() {
     super();
     this.shadow = this.attachShadow({ mode: 'open' });
@@ -129,6 +129,84 @@ footer {
 	color: var(--primary);
 	text-align: center;
 }
+@media screen and (max-width: 499px) {
+	.footer-container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		gap: 40px;
+		padding: 80px 30px;
+	}
+
+	.group-article,
+	.link-section,
+	.person-info {
+		padding: 0px;
+	}
+	.person-info h2::before {
+		content: "";
+		white-space: pre;
+		border-left: 0px solid;
+		border-color: transparent;
+	}
+
+}
+
+@media screen and (min-width: 455px) {
+	.footer-container {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+@media screen and (min-width: 500px) {
+	.footer-container {
+		padding: 80px 63px;
+		gap: 53px;
+	}
+	
+}
+
+@media screen and (min-width: 650px) {
+
+	.footer-container {
+		padding: 80px 63px;
+		gap: 53px;
+		flex-direction: row;
+	}
+}
+
+@media screen and (min-width: 700px) {
+	
+	.footer-container {
+		padding: 80px 63px;
+		gap: 53px;
+		flex-direction: row;
+	}
+
+}
+
+@media screen and (min-width: 800px) {
+	
+	.footer-container {
+		padding: 80px 100px;
+		gap: 99px;
+		flex-direction: row;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	
+	.footer-container {
+		flex-direction: row;
+		width: 100%;
+		height: 100%;
+		padding: 80px 150px;
+		gap: 150px;
+	}
+}
+
     </style>
 <footer>
 			<section class="footer">
@@ -159,10 +237,10 @@ footer {
 							<h2>Tautan</h2>
 							<ul>
 								<li>
-									<a href="./index.html">Home</a>
+									<a href="#/home-page">Home</a>
 								</li>
 								<li>
-									<a href="#">About</a>
+									<a href="#/favorite">Favorite</a>
 								</li>
 								<li>
 									<a href="https://instagram.com/indratrst">Contact us</a>
@@ -180,4 +258,4 @@ footer {
   }
 }
 
-customElements.define('costume-footer', CostumeFooter);
+customElements.define('custom-footer', CustomFooter);

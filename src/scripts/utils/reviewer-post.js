@@ -13,7 +13,7 @@ const PostReview = (url, name, review) => {
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   const date = new Date().toLocaleDateString('id-ID', options);
 
-  const newReview = `
+  const userReview = `
   <div class="reviews">
     <div class="container-card-review">
       <div class="card-review">
@@ -30,7 +30,7 @@ const PostReview = (url, name, review) => {
       </div>
     </div>`;
 
-  reviewContainer.innerHTML += newReview;
+  reviewContainer.innerHTML += userReview;
 };
 
 export default PostReview;

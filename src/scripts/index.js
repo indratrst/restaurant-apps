@@ -18,4 +18,3 @@ window.addEventListener('load', async () => {
   app.renderPage();
   await swRegister();
 });
-

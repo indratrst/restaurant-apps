@@ -9,5 +9,4 @@ self.addEventListener('install', () => {
 
 self.addEventListener('push', () => {
   console.log('Service Worker: Pushed');
-
 });

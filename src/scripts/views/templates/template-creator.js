@@ -1,6 +1,6 @@
 import CONFIG from '../../globals/config';
 
-const createRestaurantItemTemplate = (restaurant) =>/* html */ `
+const listRestaurant = (restaurant) =>/* html */ `
 <article class="card-items">
 <img class="card-items-header" src="${CONFIG.BASE_IMAGE_URL_S + restaurant.pictureId}" alt="${restaurant.title}" />
  <div class="card-items-content">
@@ -11,14 +11,14 @@ const createRestaurantItemTemplate = (restaurant) =>/* html */ `
    <p class="card-text-description">
    ${restaurant.description}
    </p>
-   <a href="#/detail/${restaurant.id}">
-   <button class="card-items-button">Detail</button>
-   </a>
+   
+   <button class="card-items-button"><a href="#/detail/${restaurant.id}">Detail</a></button>
+   
 
  </div>
  </article>
 `;
-const createRestaurantDetailTemplate = (restaurant) => /* html */ `
+const detailRestaurant = (restaurant) => /* html */ `
 <div class="container-detail">
 				<div class="wrapping-detail">
 					<div class="image-detail"><img src="${CONFIG.BASE_IMAGE_URL_L + restaurant.pictureId}" alt="${restaurant.title}" /></div>
@@ -32,19 +32,19 @@ const createRestaurantDetailTemplate = (restaurant) => /* html */ `
 									<h3>Description : </h3>
 											<p>${restaurant.description}</p>
 							</div>
-				 </div>		
+				 </div>
 
 								<div class="menus">
 								<div class="menu-drinks">
 										<h2>Menu Drinks</h2>
 										<ul>
 									${restaurant.menus.drinks.map((drink) => /* html */ `<li>${drink.name}</li>`).join('')}
-										</ul>		
+										</ul>
 								</div>
 								<div class="menu-foods">
 										<h2>Menu Foods</h2>
 										<ul>
-									${restaurant.menus.foods.map((food) => /* html */ `<li>${food.name}</li>`).join('')}	
+									${restaurant.menus.foods.map((food) => /* html */ `<li>${food.name}</li>`).join('')}
 										</ul>
 								</div>
 </div>
@@ -70,23 +70,23 @@ const createRestaurantDetailTemplate = (restaurant) => /* html */ `
 					</div>
 				`,
     )
-    .join('')}	
+    .join('')}
 					</section>
 								</div>
 						`;
 
-const createLikeButtonTemplate = () => /* html */ `
+const likeButton = () => /* html */ `
 						<button aria-label="like this list restaurant" id="likeButton" class="like">
 							<i class="fa-regular fa-thumbs-up" aria-hidden="true"></i>
 						</button>
 					`;
 
-const createLikedButtonTemplate = () => /* html */ `
+const likedButton = () => /* html */ `
 						<button aria-label="unlike this restaurant" id="likeButton" class="like">
 							<i class="fa-solid fa-thumbs-up" aria-hidden="true"></i>
 						</button>
 					`;
 
 export {
-  createRestaurantItemTemplate, createRestaurantDetailTemplate, createLikeButtonTemplate, createLikedButtonTemplate,
+  listRestaurant, detailRestaurant, likeButton, likedButton,
 };

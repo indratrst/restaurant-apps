@@ -276,7 +276,7 @@ main {
 .card-items-button {
 	margin-top: 15px;
 	font-size: 15px;
-	width: 140px;
+	width: 120px;
 	letter-spacing: 1px;
 	height: 44px;
 	border: none;
@@ -285,6 +285,12 @@ main {
 	border-radius: 25px;
 }
 
+.card-items-button a{
+font-size: 14px;
+padding: 15px;
+color: var(--light);
+text-decoration: none;
+}
 .card-items .custom-item {
 	overflow-y: visible;
 	height: 100%;
@@ -411,6 +417,7 @@ main {
 	justify-content: center;
 	z-index: 9999;
 }
+
 
 
 .loader{
@@ -573,4 +580,24 @@ main {
 	margin: 20px;
 	position: absolute;
 	right: 20px;
+	bottom: 20px;
+}
+.btn-review {
+	margin-top: 15px;
+	font-size: 15px;
+	width: 120px;
+	letter-spacing: 1px;
+	height: 44px;
+	border: none;
+	background-color: var(--primary);
+	color: var(--light);
+	border-radius: 25px;
+	position:absolute;
+}
+
+.btn-review a{
+font-size: 14px;
+padding: 15px;
+color: var(--light);
+text-decoration: none;
 }
