@@ -9,18 +9,19 @@ import loader from '../templates/loader';
 const Detail = {
   async render() {
     return /* html */`
+
   <div class="breaker">
   <h2 class="text">Picturesque Shutter <br />Resto Detail</h2>
   <div id="loading">
   
   </div>
   </div>
-  <div class="container-detail">
+  <div class="container-detail" id="container-detail" tabindex="0">
   
   </div>
   
   <div id="likeButtonContainer"></div>
-  <div class="container-review">
+  <div class="container- ">
   <form class="form-review">
     <h2>Input Your Review</h2>
   <label for="inputName">Nama</label>

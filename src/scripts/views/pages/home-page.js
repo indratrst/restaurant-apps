@@ -5,14 +5,15 @@ import loader from '../templates/loader';
 const HomePage = {
   async render() {
     return `
+
 		<div id="loading">
 
 		</div>
 		<div class="breaker">
 		
 		<h2 class="text">Picturesque Shutter <br />Resto List</h2>
-	</div>
-    <div class="card" id="mainContent">
+	  </div>
+    <div class="card" id="mainContent" tabindex="0">
   	</div>
     `;
   },

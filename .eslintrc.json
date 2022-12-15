@@ -19,6 +19,5 @@
       "linebreak-style": 0,
       "no-tabs": ["error", { "allowIndentationTabs": true }],
       "max-len": ["error", { "ignoreTemplateLiterals": true }]
-      // "max-len": ["error", { "code": 80 }]
     }
 }
