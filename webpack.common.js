@@ -1,3 +1,4 @@
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
@@ -40,6 +41,29 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
+        },
+      ],
+    }),
+    new WebpackPwaManifest({
+      id: 'restaurant-list-lite-pwa-1',
+      filename: 'app.webmanifest',
+      start_url: './index.html',
+      name: 'Restaurant List Lite',
+      short_name: 'Restaurant List',
+      description: 'Recomendation destination for you',
+      background_color: '#ffffff',
+      crossorigin: 'use-credentials',
+      publicPath: '/',
+      icons: [
+        {
+          src: path.resolve('src/public/logos.png'),
+          sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+          purpose: 'any',
+        },
+        {
+          src: path.resolve('src/public/logos.png'),
+          size: '1024x1024',
+          purpose: 'maskable',
         },
       ],
     }),

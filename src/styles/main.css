@@ -133,6 +133,21 @@ body {
 	font-size: 18px;
 	font-weight: 300;
 }
+/* go to main-content */
+.skip-link {
+	position: absolute;
+	top: -40px;
+	left: 0;
+	padding: 8px;
+	background-color: var(--primary);
+	color: white;
+	z-index: 100;
+}
+.skip-link:focus {
+	top: 0;
+}
+/* end */
+
 
 main {
 	width: 100%;
@@ -176,18 +191,6 @@ main {
 	letter-spacing: 5px;
 }
 
-.skip-link {
-	position: absolute;
-	top: -40px;
-	left: 0;
-	padding: 8px;
-	background-color: var(--primary);
-	color: white;
-	z-index: 100;
-}
-.skip-link:focus {
-	top: 0;
-}
 
 .card {
 	width: 100%;
@@ -300,6 +303,8 @@ main {
 	background: transparent;
 }
 
+
+/* page detail */
 .container-detail {
 	width: 100%;
 }
@@ -387,6 +392,7 @@ main {
 	padding-bottom: 10px;
 }
 
+/* butrton like */
 .like {
 	font-size: 18px;
 	position: fixed;
@@ -404,7 +410,9 @@ main {
 	justify-content: center;
 	z-index: 9999;
 }
+/* end button like */
 
+/* loader */
 .loader {
 	display: flex;
 	justify-content: center;
@@ -520,6 +528,7 @@ main {
 		opacity: 1;
 	}
 }
+/* end loader */
 
 .container-review {
 	width: 100%;
@@ -583,3 +592,5 @@ main {
 	color: var(--light);
 	text-decoration: none;
 }
+
+/* end page review */
