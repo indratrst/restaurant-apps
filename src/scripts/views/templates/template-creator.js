@@ -2,17 +2,17 @@ import CONFIG from '../../globals/config';
 
 const listRestaurant = (restaurant) =>/* html */ `
 <article class="card-items">
-<img class="card-items-header" src="${CONFIG.BASE_IMAGE_URL_S + restaurant.pictureId}" alt="${restaurant.title}" />
+<img class="card-items-header" src="${CONFIG.BASE_IMAGE_URL_S + restaurant.pictureId}" alt="${restaurant.title || '-'}" />
  <div class="card-items-content">
-   <p class="card-text-city">${restaurant.city}<span class="card-text-rating">${restaurant.rating}</span></p>
+   <p class="card-text-city">${restaurant.city}<span class="card-text-rating">${restaurant.rating || '-'}</span></p>
    <h3 class="card-text-title">
-     ${restaurant.name}
+     ${restaurant.name || '-'}
    </h3>
    <p class="card-text-description">
-   ${restaurant.description}
+   ${restaurant.description || '-'}
    </p>
    
-   <button class="card-items-button"><a href="#/detail/${restaurant.id}">Detail</a></button>
+   <button class="card-items-button"><a href="#/detail/${restaurant.id}">${restaurant.name || '-'}</a></button>
    
 
  </div>
@@ -75,18 +75,21 @@ const detailRestaurant = (restaurant) => /* html */ `
 								</div>
 						`;
 
-const likeButton = () => /* html */ `
-						<button aria-label="like this list restaurant" id="likeButton" class="like">
+const createLikeRestaurantButtonTemplate = () => /* html */ `
+						<button aria-label="like this restaurant" id="likeButton" class="like">
 							<i class="fa-regular fa-thumbs-up" aria-hidden="true"></i>
 						</button>
 					`;
 
-const likedButton = () => /* html */ `
+const createUnlikeRestaurantButtonTemplate = () => /* html */ `
 						<button aria-label="unlike this restaurant" id="likeButton" class="like">
 							<i class="fa-solid fa-thumbs-up" aria-hidden="true"></i>
 						</button>
 					`;
 
 export {
-  listRestaurant, detailRestaurant, likeButton, likedButton,
+  listRestaurant,
+  detailRestaurant,
+  createLikeRestaurantButtonTemplate,
+  createUnlikeRestaurantButtonTemplate,
 };
