@@ -9,6 +9,7 @@ module.exports = merge(common, {
   devServer: {
     static: path.resolve(__dirname, 'dist'),
     open: true,
+    compress: true,
   },
   plugins: [new CleanWebpackPlugin()],
 });

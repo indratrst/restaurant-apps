@@ -2,17 +2,17 @@ import CONFIG from '../../globals/config';
 
 const listRestaurant = (restaurant) =>/* html */ `
 <article class="card-items">
-<img class="card-items-header" src="${CONFIG.BASE_IMAGE_URL_S + restaurant.pictureId}" alt="${restaurant.title || '-'}" />
+<img class="card-items-header lazyload" data-src="${CONFIG.BASE_IMAGE_URL_S + restaurant.pictureId}" alt="${restaurant.title}" />
  <div class="card-items-content">
-   <p class="card-text-city">${restaurant.city}<span class="card-text-rating">${restaurant.rating || '-'}</span></p>
+   <p class="card-text-city">${restaurant.city}<span class="card-text-rating">${restaurant.rating}</span></p>
    <h3 class="card-text-title">
-     ${restaurant.name || '-'}
+     ${restaurant.name}
    </h3>
    <p class="card-text-description">
-   ${restaurant.description || '-'}
+   ${restaurant.description}
    </p>
    
-   <button class="card-items-button"><a href="#/detail/${restaurant.id}">${restaurant.name || '-'}</a></button>
+   <button class="card-items-button"><a href="#/detail/${restaurant.id}">${restaurant.name}</a></button>
    
 
  </div>
@@ -21,7 +21,7 @@ const listRestaurant = (restaurant) =>/* html */ `
 const detailRestaurant = (restaurant) => /* html */ `
 <div class="container-detail">
 				<div class="wrapping-detail">
-					<div class="image-detail"><img src="${CONFIG.BASE_IMAGE_URL_L + restaurant.pictureId}" alt="${restaurant.title}" /></div>
+					<div class="image-detail lazyload"><img data-src="${CONFIG.BASE_IMAGE_URL_L + restaurant.pictureId}" alt="${restaurant.title}" /></div>
 							<div class="text-detail">
 									<h3>Title :</h3>
 											<p>${restaurant.name}</p>
