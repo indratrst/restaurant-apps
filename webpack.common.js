@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
+// const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -104,17 +104,17 @@ module.exports = {
         }),
       ],
     }),
-    new ImageminWebpWebpackPlugin({
-      config: [
-        {
-          test: /\.(jpe?g|png)/,
-          options: {
-            quality: 50,
-          },
-        },
-      ],
-      overrideExtension: true,
-    }),
+    // new ImageminWebpWebpackPlugin({
+    //   config: [
+    //     {
+    //       test: /\.(jpe?g|png)/,
+    //       options: {
+    //         quality: 50,
+    //       },
+    //     },
+    //   ],
+    //   overrideExtension: true,
+    // }),
     new MiniCssExtractPlugin(),
     new BundleAnalyzerPlugin(),
   ],
