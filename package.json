@@ -8,6 +8,7 @@
 		"build": "webpack --config webpack.prod.js",
 		"serve": "http-server dist --port 9000",
 		"build-serve": "npm run build && npm run build-image && npm run serve",
+		"dev": "npm run build && npm run build-image && npm run start-dev",
 		"test": "karma start",
 		"e2e": "codeceptjs run --steps",
 		"lint": "eslint ./src",
