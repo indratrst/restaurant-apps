@@ -5,8 +5,7 @@ const ImageminMozjpeg = require('imagemin-mozjpeg');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin  = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const path = require('path');
 
@@ -116,7 +115,7 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
     new BundleAnalyzerPlugin({
-      analyzerMode: 'disabled',
+      analyzerMode: 'static',
       openAnalyzer: false,
     }),
   ],
