@@ -4,5 +4,5 @@ node_modules/
 package-lock.json
 .env
 .test.env
-e2e/outputs/
+e2e/
 dist/
