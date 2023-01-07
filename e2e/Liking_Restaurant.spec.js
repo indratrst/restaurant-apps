@@ -1,21 +1,21 @@
 const assert = require('assert');
+
 Feature('Liking Restaurant');
- 
+
 Before(({ I }) => {
   I.amOnPage('/#/favorite');
 });
- 
+
 Scenario('showing empty liked restaurant', ({ I }) => {
   // I.seeElement('#query');
   I.dontSeeElement('.card-items');
 });
 
-
 Scenario('liking one restaurant', async ({ I }) => {
   I.dontSeeElement('.card-items');
- 
+
   I.amOnPage('/');
-  
+
   I.seeElement('.card-items-button a');
   const firstRestaurant = locate('.card-items-button a').first();
   const firstRestaurantTitle = await I.grabTextFrom(firstRestaurant);
@@ -23,8 +23,6 @@ Scenario('liking one restaurant', async ({ I }) => {
 
   // I.click(locate('.card-items-button a').first());
 
-  
-  // pause();
   I.seeElement('#likeButton');
   I.click('#likeButton');
 
@@ -33,8 +31,4 @@ Scenario('liking one restaurant', async ({ I }) => {
 
   const likedRestaurantTitle = await I.grabTextFrom('.card-items-button');
   assert.strictEqual(firstRestaurantTitle, likedRestaurantTitle);
-
-  
 });
-
-

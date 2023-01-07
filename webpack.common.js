@@ -4,9 +4,8 @@ const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const path = require('path');
 
@@ -25,10 +24,10 @@ module.exports = {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
+          'css-loader',
         ],
       },
-     
+
     ],
   },
   optimization: {
@@ -66,8 +65,7 @@ module.exports = {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
           globOptions: {
-            // CopyWebpackPlugin mengabaikan berkas yang berada di dalam folder images
-            ignore: ['**/images/**'],
+            ignore: ['**/images/heros**'],
           },
         },
       ],
@@ -95,7 +93,7 @@ module.exports = {
         },
       ],
     }),
-     
+
     new ImageminWebpackPlugin({
       plugins: [
         ImageminMozjpeg({

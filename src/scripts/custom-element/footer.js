@@ -250,9 +250,9 @@ footer {
 					</div>
 					<div class="logo-footer">
 				<picture>
-					<source type="image/webp" srcset="./images/4-removebg-preview-resize-small.webp">
-					<source type="image/jpg" srcset="./images/4-removebg-preview-resize-small.jpg">
-					<img src="./images/4-removebg-preview-resize-large.jpg" alt="logo-footer">
+					<source type="image/webp" srcset="./images/heros/4-removebg-preview-resize.webp">
+					<source type="image/jpeg" srcset="./images/heros/4-removebg-preview-resize-small.jpg">
+					<img src="./images/heros/4-removebg-preview-resize-large.jpg" alt="logo-footer">
 				</picture>
 						<p>Created By <span>Indra Tristia</span> 2022</p>
 					</div>

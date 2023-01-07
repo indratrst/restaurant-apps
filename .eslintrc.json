@@ -20,6 +20,7 @@
     "no-alert": 0,
     "no-underscore-dangle": 0,
     "no-restricted-globals": 0,
+    "no-unused-vars": 0,
     "linebreak-style": 0,
     "no-tabs": ["error", { "allowIndentationTabs": true }],
     "max-len": ["error", { "ignoreTemplateLiterals": true }],

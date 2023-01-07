@@ -1,4 +1,5 @@
 const assert = require('assert');
+
 Feature('Unliking Restaurant');
 
 Before(({ I }) => {
@@ -9,7 +10,7 @@ Scenario('Unliking one restaurant', async ({ I }) => {
   I.dontSeeElement('.card-items');
 
   I.amOnPage('/');
-  
+
   I.seeElement('.card-items-button a');
   const firstRestaurant = locate('.card-items-button a').first();
   const firstRestaurantTitle = await I.grabTextFrom(firstRestaurant);
@@ -17,7 +18,6 @@ Scenario('Unliking one restaurant', async ({ I }) => {
 
   // I.click(locate('.card-items-button a').first());
 
-  
   // pause();
   I.seeElement('#likeButton');
   I.click('#likeButton');
@@ -26,20 +26,16 @@ Scenario('Unliking one restaurant', async ({ I }) => {
   I.seeElement('.card-items');
   const likedRestaurantTitle = await I.grabTextFrom('.card-items-button');
   assert.strictEqual(firstRestaurantTitle, likedRestaurantTitle);
-  pause();
+
   I.seeElement('.card-items');
-  
+
   I.seeElement('.card-items-button a');
   I.click(locate('.card-items-button a').first());
 
-  
-  
   I.seeElement('#likeButton');
   I.click('#likeButton');
 
-    I.amOnPage('/#/favorite');
-
-  
+  I.amOnPage('/#/favorite');
 });
 
 Scenario('showing empty liked restaurant', ({ I }) => {
