@@ -250,7 +250,8 @@ footer {
 					</div>
 					<div class="logo-footer">
 				<picture>
-					<source type="image/webp" srcset="images/icon/footer.webp">
+					<source srcset="images/icon/footer.webp" type="image/webp">
+					<source srcset="images/icon/footer.png" type="image/png">
 					<img src="images/icon/footer.png" alt="logo-footer">
 				</picture>
 						<p>Created By <span>Indra Tristia</span> 2022</p>
