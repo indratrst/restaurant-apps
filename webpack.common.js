@@ -115,8 +115,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
     new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
-      openAnalyzer: false,
+      analyzerMode: 'disabled',
+      // openAnalyzer: false,
     }),
   ],
 };
