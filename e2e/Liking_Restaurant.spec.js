@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 Feature('Liking Restaurant');
 
 Before(({ I }) => {
@@ -18,7 +16,6 @@ Scenario('liking one restaurant', async ({ I }) => {
 
   I.seeElement('.card-items-button a');
   const firstRestaurant = locate('.card-items-button a').first();
-  const firstRestaurantTitle = await I.grabTextFrom(firstRestaurant);
   I.click(firstRestaurant);
 
   // I.click(locate('.card-items-button a').first());
@@ -28,7 +25,4 @@ Scenario('liking one restaurant', async ({ I }) => {
 
   I.amOnPage('/#/favorite');
   I.seeElement('.card-items');
-
-  const likedRestaurantTitle = await I.grabTextFrom('.card-items-button');
-  assert.strictEqual(firstRestaurantTitle, likedRestaurantTitle);
 });

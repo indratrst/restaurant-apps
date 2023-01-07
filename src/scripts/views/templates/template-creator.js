@@ -21,7 +21,7 @@ const listRestaurant = (restaurant) =>/* html */ `
 const detailRestaurant = (restaurant) => /* html */ `
 <div class="container-detail">
 				<div class="wrapping-detail">
-					<div class="image-detail"><img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_L + restaurant.pictureId}" alt="${restaurant.title}" /></div>
+					<div class="image-detail"><img data-src="${CONFIG.BASE_IMAGE_URL_L + restaurant.pictureId}" alt="${restaurant.title}" /></div>
 							<div class="text-detail">
 									<h3>Title :</h3>
 											<p>${restaurant.name}</p>
