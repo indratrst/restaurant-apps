@@ -116,7 +116,7 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new BundleAnalyzerPlugin({
       analyzerMode: 'disabled',
-      // openAnalyzer: false,
+      openAnalyzer: false,
     }),
   ],
 };
