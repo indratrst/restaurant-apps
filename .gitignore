@@ -5,3 +5,4 @@ package-lock.json
 .env
 .test.env
 e2e/outputs/
+dist/
