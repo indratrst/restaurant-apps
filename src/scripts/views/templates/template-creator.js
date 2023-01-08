@@ -1,5 +1,31 @@
 import CONFIG from '../../globals/config';
 
+const createSkeletonListRestaurant = (count) => {
+  let template = '';
+
+  for (let i = 0; i < count; i += 1) {
+    template += `
+			<article class="card-items">
+<img class="card-items-header skeleton"/>
+ <div class="card-items-content">
+   <p class="card-text-city skeleton skeleton-text">
+	 <span class="card-text-rating skeleton skeleton-text"></span>
+	 </p>
+   <h3 class="card-text-title skeleton skeleton-text">
+   </h3>
+   <p class="card-text-description skeleton skeleton-text-desc">
+   </p>
+   
+   <button class="card-items-button skeleton"><a href="" class="skeleton skeleton text"></a></button>
+   
+
+ </div>
+ </article>
+    `;
+  }
+  return template;
+};
+
 const listRestaurant = (restaurant) =>/* html */ `
 <article class="card-items">
 <img class="card-items-header lazyload" data-src="${CONFIG.BASE_IMAGE_URL_S + restaurant.pictureId}" alt="${restaurant.title}" />
@@ -92,4 +118,5 @@ export {
   detailRestaurant,
   createLikeRestaurantButtonTemplate,
   createUnlikeRestaurantButtonTemplate,
+  createSkeletonListRestaurant,
 };

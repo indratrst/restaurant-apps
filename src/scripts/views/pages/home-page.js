@@ -1,5 +1,8 @@
 import restaurantDataSource from '../../data/restaurantdata-source';
-import { listRestaurant } from '../templates/template-creator';
+import {
+  listRestaurant,
+  createSkeletonListRestaurant,
+} from '../templates/template-creator';
 import loader from '../templates/loader';
 
 const HomePage = {
@@ -9,11 +12,14 @@ const HomePage = {
 		<div id="loading">
 
 		</div>
+    
+    
 		<div class="breaker">
 		
 		<h2 class="text">Picturesque Shutter <br />Resto List</h2>
 	  </div>
     <div class="card" id="mainContent" tabindex="0">
+    ${createSkeletonListRestaurant(20)}
   	</div>
     `;
   },
@@ -26,7 +32,7 @@ const HomePage = {
 
     try {
       const restaurant = await restaurantDataSource.homePage();
-
+      restaurantContainer.innerHTML = '';
       restaurant.forEach((resto) => {
         restaurantContainer.innerHTML += listRestaurant(resto);
       });

@@ -37,6 +37,16 @@ const Detail = {
   },
 
   async afterRender() {
+    // lazy load font awesome
+    let scriptElement = document.querySelector(
+      'script[src="https://kit.fontawesome.com/28990b5acb.js"]',
+    );
+
+    if (!scriptElement) {
+      scriptElement = document.createElement('script');
+      scriptElement.src = 'https://kit.fontawesome.com/28990b5acb.js';
+      document.body.appendChild(scriptElement);
+    }
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurantContainer = document.querySelector('.container-detail');
     const animateLoader = document.getElementById('loading');
