@@ -1,15 +1,15 @@
 class CustomFooter extends HTMLElement {
-  constructor() {
-    super();
-    this.shadow = this.attachShadow({ mode: 'open' });
-  }
+	constructor() {
+		super();
+		this.shadow = this.attachShadow({ mode: 'open' });
+	}
 
-  connectedCallback() {
-    this.render();
-  }
+	connectedCallback() {
+		this.render();
+	}
 
-  render() {
-    this.shadow.innerHTML = `
+	render() {
+		this.shadow.innerHTML = `
     <style>
     * {
     margin: 0;
@@ -259,7 +259,7 @@ footer {
 				</div>
 			</section>
 		</footer>`;
-  }
+	}
 }
 
 customElements.define('custom-footer', CustomFooter);

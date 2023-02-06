@@ -15,7 +15,6 @@ const HomePage = {
     
     
 		<div class="breaker">
-		
 		<h2 class="text">Picturesque Shutter <br />Resto List</h2>
 	  </div>
     <div class="card" id="mainContent" tabindex="0">

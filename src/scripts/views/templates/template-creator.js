@@ -1,40 +1,39 @@
 import CONFIG from '../../globals/config';
 
 const createSkeletonListRestaurant = (count) => {
-  let template = '';
+	let template = '';
 
-  for (let i = 0; i < count; i += 1) {
-    template += `
+	for (let i = 0; i < count; i += 1) {
+		template += /* html */`
 			<article class="card-items">
 <img class="card-items-header skeleton"/>
  <div class="card-items-content">
-   <p class="card-text-city skeleton skeleton-text">
-	 <span class="card-text-rating skeleton skeleton-text"></span>
+   <p class="card-items-text-city skeleton skeleton-text">
+	 <span class="card-items-text-rating skeleton skeleton-text"></span>
 	 </p>
-   <h3 class="card-text-title skeleton skeleton-text">
+   <h3 class="card-items-text-title skeleton skeleton-text">
    </h3>
-   <p class="card-text-description skeleton skeleton-text-desc">
+   <p class="card-items-text-description skeleton skeleton-text-desc">
    </p>
-   
    <button class="card-items-button skeleton"><a href="" class="skeleton skeleton text"></a></button>
    
 
  </div>
  </article>
     `;
-  }
-  return template;
+	}
+	return template;
 };
 
 const listRestaurant = (restaurant) =>/* html */ `
 <article class="card-items">
 <img class="card-items-header lazyload" data-src="${CONFIG.BASE_IMAGE_URL_S + restaurant.pictureId}" alt="${restaurant.title}" />
  <div class="card-items-content">
-   <p class="card-text-city">${restaurant.city}<span class="card-text-rating">${restaurant.rating}</span></p>
-   <h3 class="card-text-title">
+   <p class="card-items-text-city">${restaurant.city}<span class="card-text-rating">${restaurant.rating}</span></p>
+   <h3 class="card-items-text-title">
      ${restaurant.name}
    </h3>
-   <p class="card-text-description">
+   <p class="card-items-text-description">
    ${restaurant.description}
    </p>
    
@@ -63,23 +62,27 @@ const detailRestaurant = (restaurant) => /* html */ `
 								<div class="menus">
 								<div class="menu-drinks">
 										<h2>Menu Drinks</h2>
+										<div class="wrap-menus">
 										<ul>
 									${restaurant.menus.drinks.map((drink) => /* html */ `<li>${drink.name}</li>`).join('')}
 										</ul>
+										</div>
 								</div>
 								<div class="menu-foods">
 										<h2>Menu Foods</h2>
+										<div class="wrap-menus">
 										<ul>
 									${restaurant.menus.foods.map((food) => /* html */ `<li>${food.name}</li>`).join('')}
 										</ul>
+										</div>
 								</div>
 </div>
 				<section class="user-review">
 				<h2>Review</h2>
 				<div class="reviews">
 				${restaurant.customerReviews
-    .map(
-      (data) => /* html */ `
+		.map(
+			(data) => /* html */ `
 					<div class="container-card-review">
 						<div class="card-review">
 							<div class="wrap-review">
@@ -95,8 +98,8 @@ const detailRestaurant = (restaurant) => /* html */ `
 						</div>
 					</div>
 				`,
-    )
-    .join('')}
+		)
+		.join('')}
 					</section>
 								</div>
 						`;
@@ -114,9 +117,9 @@ const createUnlikeRestaurantButtonTemplate = () => /* html */ `
 					`;
 
 export {
-  listRestaurant,
-  detailRestaurant,
-  createLikeRestaurantButtonTemplate,
-  createUnlikeRestaurantButtonTemplate,
-  createSkeletonListRestaurant,
+	listRestaurant,
+	detailRestaurant,
+	createLikeRestaurantButtonTemplate,
+	createUnlikeRestaurantButtonTemplate,
+	createSkeletonListRestaurant,
 };

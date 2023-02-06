@@ -16,9 +16,14 @@ const Favorite = {
     const restaurant = await FavoriteRestaurantIdb.getAllRestaurant();
     const restaurantContainer = document.querySelector('#main-favorite');
 
-    restaurant.forEach((data) => {
-      restaurantContainer.innerHTML += listRestaurant(data);
-    });
+    if (restaurant.length < 1) {
+      restaurantContainer
+        .innerHTML = '<h4>Tidak ada data restaurant yang ditampilkan</h4>';
+    } else {
+      restaurant.forEach((data) => {
+        restaurantContainer.innerHTML += listRestaurant(data);
+      });
+    }
   },
 };
 

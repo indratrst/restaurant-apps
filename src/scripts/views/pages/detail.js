@@ -11,7 +11,7 @@ const Detail = {
     return /* html */`
 
   <div class="breaker">
-  <h2 class="text">Picturesque Shutter <br />Resto Detail</h2>
+  <h2 class="text">Picturesque Shutter Resto Detail</h2>
   <div id="loading">
   
   </div>
@@ -30,7 +30,6 @@ const Detail = {
     <input type="text-area" name="inputReview" id="inputReview" /> 
   
   <button id="submit-review" class="btn-review"><a href="#/review">Submit </a></button>
- 
   </form>
   </div>
   `;
