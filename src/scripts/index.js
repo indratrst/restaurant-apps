@@ -12,6 +12,7 @@ const app = new App({
   drawer: document.querySelector('#drawer'),
   content: document.querySelector('#main-content'),
 });
+
 window.addEventListener('hashchange', () => {
   app.renderPage();
 });

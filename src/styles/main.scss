@@ -80,6 +80,27 @@ body {
   font-family: 'Inter', sans-serif;
 
 
+
+  &::before {
+    content: "";
+    // margin-right: 100px;
+    background-image: linear-gradient(rgb(0 0 0 / 26%), rgb(0 0 0/ 76%)), url(../public/images/heros/hero-image_2.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    // background-size: 73vmax;
+    background-size: cover;
+    height: 500px;
+    // background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+
+
 }
 
 
@@ -106,6 +127,21 @@ body {
   transition: min-height 0.3s;
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 9;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(rgb(0 0 0 / 81%), rgb(0 0 0 / 2%));
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    // z-index: 1;
+  }
+
 
   .header-menu {
     font-size: 60px;
@@ -141,12 +177,15 @@ body {
 
     &::after {
       content: '☰';
+      color: #cececebf;
       font-size: 50px;
 
-      & .active::after {
-        content: '\292C';
-        font-size: 65px;
-      }
+
+    }
+
+    & .active::after {
+      content: '\292C';
+      font-size: 65px;
     }
   }
 
@@ -154,6 +193,7 @@ body {
     width: 270px;
     height: 70px;
     margin-left: 60px;
+    filter: brightness(0) invert(1) drop-shadow(0 0 0.40rem rgb(9, 97, 211));
 
     @include small-devices {
       width: 210px;
@@ -168,10 +208,13 @@ body {
 
 .nav {
   width: 100%;
+  z-index: 9999;
+
+
 
   @include medium-devices {
     z-index: 10;
-    background-color: rgb(146, 62, 62);
+    // background-color: rgb(146, 62, 62);
     width: 100%;
     position: absolute;
     right: 0;
@@ -214,17 +257,17 @@ body {
       justify-content: space-around;
 
       @include medium-devices {
-        border-bottom: 1px solid #000000;
+        border-bottom: 1px solid #193ade;
         width: 100%;
         padding: 20px;
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(27 27 27 / 88%);
       }
 
       & a {
         display: flex;
         justify-content: center;
         align-items: center;
-        color: $dark;
+        color: $light;
         font-weight: 500;
         text-decoration: none;
         /* width: 100%; */
@@ -232,7 +275,9 @@ body {
         text-align: center;
 
         &:hover {
-          color: $primary;
+          // color: $primary;
+          filter: drop-shadow(0 0 0.1rem rgb(9, 97, 211));
+
         }
       }
     }
@@ -283,7 +328,7 @@ body {
 
   &-inner {
     margin: 0 auto;
-    max-width: 700px;
+    max-width: 800px;
     z-index: 1;
     position: absolute;
     display: flex;
@@ -298,11 +343,20 @@ body {
   &-title {
     color: #fff;
     font-weight: 500;
-    font-size: 8.2vmin;
+    font-size: 44px;
     opacity: 1;
-    width: 90%;
+    width: 100%;
     text-shadow: 4px 4px 7px rgb(1, 1, 1);
 
+    @include medium-devices {
+      font-size: 21px;
+
+    }
+
+    @include small-devices {
+      font-size: 19px;
+
+    }
   }
 
   &-tagline {
@@ -338,7 +392,7 @@ main {
 
 .breaker {
   height: 50px;
-  margin-top: 1vmin;
+  margin-top: 4.5vmin;
   position: relative;
   margin-bottom: 50px;
   margin-left: 18px;
@@ -347,17 +401,17 @@ main {
 
   & .text {
     // border-top: 2px solid $dark;
-    border-bottom: 2px solid rgb(197, 196, 196);
+    border-left: 2px solid $secondary;
     width: 100%;
     display: block;
-    margin: auto;
-    padding: 10px 25px;
+    margin: 10px 0px;
+    padding: 0px 25px;
     font-size: 1.9em;
     font-weight: 600;
-    color: #213e86;
-    text-shadow: 4px 4px 7px rgb(197, 196, 196);
+    color: #2b3650;
+    text-shadow: 4px 4px 7px rgb(202, 201, 201);
 
-    line-height: 1.2em;
+    line-height: 1em;
     text-transform: uppercase;
     letter-spacing: 5px;
 
