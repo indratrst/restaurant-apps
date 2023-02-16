@@ -84,7 +84,7 @@ body {
   &::before {
     content: "";
     // margin-right: 100px;
-    background-image: linear-gradient(rgb(0 0 0 / 26%), rgb(0 0 0/ 76%)), url(../public/images/heros/hero-image_2.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.301), rgba(0, 0, 0, 0.438)), url(../public/images/heros/hero-image_2.jpg);
     background-position: top center;
     background-repeat: no-repeat;
     // background-size: 73vmax;
