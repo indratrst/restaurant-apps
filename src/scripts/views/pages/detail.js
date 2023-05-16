@@ -81,7 +81,7 @@ const Detail = {
 //         nameInput.value = '';
 //         reviewInput.value = '';
 //       }
-    });
+//     });
   },
 };
 
