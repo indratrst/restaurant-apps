@@ -21,17 +21,7 @@ const Detail = {
   </div>
   
   <div id="likeButtonContainer"></div>
-//   <div class="container- ">
-//   <form class="form-review">
-//     <h2>Input Your Review</h2>
-//   <label for="inputName">Nama</label>
-//   <input type="text" name="inputName" id="inputName" />
-//   <label for="inputReview">Review</label>
-//     <input type="text-area" name="inputReview" id="inputReview" /> 
-  
-//   <button id="submit-review" class="btn-review"><a href="#/review">Submit </a></button>
-//   </form>
-//   </div>
+
   `;
   },
 
