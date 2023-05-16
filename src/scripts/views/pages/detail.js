@@ -66,21 +66,21 @@ const Detail = {
       animateLoader.innerHTML = loader.loaderFail();
     }
 
-    const btnSubmit = document.querySelector('#submit-review');
-    const nameInput = document.querySelector('#inputName');
-    const reviewInput = document.querySelector('#inputReview');
+//     const btnSubmit = document.querySelector('#submit-review');
+//     const nameInput = document.querySelector('#inputName');
+//     const reviewInput = document.querySelector('#inputReview');
 
-    btnSubmit.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (nameInput.value === '' && reviewInput.value === '') {
-        alert('Inputan tidak boleh ada yang kosong');
-        nameInput.value = '';
-        reviewInput.value = '';
-      } else {
-        PostReview(url, nameInput.value, reviewInput.value);
-        nameInput.value = '';
-        reviewInput.value = '';
-      }
+//     btnSubmit.addEventListener('click', (e) => {
+//       e.preventDefault();
+//       if (nameInput.value === '' && reviewInput.value === '') {
+//         alert('Inputan tidak boleh ada yang kosong');
+//         nameInput.value = '';
+//         reviewInput.value = '';
+//       } else {
+//         PostReview(url, nameInput.value, reviewInput.value);
+//         nameInput.value = '';
+//         reviewInput.value = '';
+//       }
     });
   },
 };
